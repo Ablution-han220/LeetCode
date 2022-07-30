@@ -58,11 +58,10 @@ public:
         }
         int leftHeight = height(root->left);
         int rightHeight = height(root->right);
-        int differ = abs(leftHeight - rightHeight);
-        if (leftHeight == -1 || rightHeight == -1 || differ > 1){
+        if (leftHeight == -1 || rightHeight == -1 || abs(leftHeight - rightHeight) > 1){
             return -1;
         }else{
-            return max(height(root->left),height(root->right)) + 1;
+            return max(leftHeight,rightHeight) + 1;
         }
     }
 };
