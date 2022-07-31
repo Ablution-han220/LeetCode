@@ -15,3 +15,10 @@ string a
 for (int i = 0; i < a.size(); ++i)) {
     int carry = a[i] - '0';
 }
+
+BFS and DFS
+
+DFS:有三种方式遍历树，前序中序后序 
+例子lc 110
+
+![image-20220730183644945](assets/image-20220730183644945.png)
