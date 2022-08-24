@@ -1,28 +1,31 @@
 # C++
 
-string 类型不能用switch需要转化为char或其它类型，例如直接使用[]访问， char a = string[1]
+string 类型不能用switch需要转化为char或其它类型，例如直接使用[]访问， char a = string[1]  
 
-vector 和 queue都有emplace function可以替代push 优化之前push操作需要copy object的操作
-vector.emplace_back()  queue.emplace()
+vector 和 queue都有emplace function可以替代push 优化之前push操作需要copy object的操作  
+vector.emplace_back()  queue.emplace() 
 
-priorty_queue<pair<int,int>> q
-在优先队列中使用pair默认先比较第一个元素在比较第二个元素
+priorty_queue<pair<int,int>> q  
+在优先队列中使用pair默认先比较第一个元素在比较第二个元素  
 
-binaray search中
-int middle = low + (high - low) / 2  可以防止溢出，功能等效于(low + high) / 2
-此外使用>>右移运算符 >>1 功能等于 /2 不过注意优先级顺序，移位运算符优先级低于+ - x /等
+binaray search中  
+int middle = low + (high - low) / 2  可以防止溢出，功能等效于(low + high) / 2  
+此外使用>>右移运算符 >>1 功能等于 /2 不过注意优先级顺序，移位运算符优先级低于+ - x /等  
 
-char类型与int类型之间转换要看ASCII码 
-如'0' - '0' = 0
-  '0' + 1 = '1'
-  'a' - 'a' = 0
-例子：lc 67题
-string a
-for (int i = 0; i < a.size(); ++i)) {
-    int carry = a[i] - '0';
-}
+char类型与int类型之间转换要看ASCII码  
+如'0' - '0' = 0  
+  '0' + 1 = '1'  
+  'a' - 'a' = 0  
+例子：lc 67题   
+string a  
+for (int i = 0; i < a.size(); ++i)) {    
+    int carry = a[i] - '0';  
+}  
 
-STL::list 是double linkedlist实现的
+std::string 在c++ 11后string字符串都是以'\0'结尾  
+
+
+STL::list 是double linkedlist实现的   
 
 ## Backtracking
 
