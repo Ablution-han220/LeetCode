@@ -124,3 +124,14 @@ public:
 };
 ```
 
+
+## Topological Sorting
+
+idea：针对Directed acyclic graph (DAG)找到一个可以执行的线性顺序
+
+Tips：
+
+- 如果这个图不是 DAG，那么它是没有拓扑序的；
+- 如果是 DAG，那么它至少有一个拓扑序；
+- 反之，如果它存在一个拓扑序，那么这个图必定是 DGA.
+
