@@ -5,12 +5,11 @@ string 类型不能用switch需要转化为char或其它类型，例如直接使
 vector 和 queue都有emplace function可以替代push 优化之前push操作需要copy object的操作  
 vector.emplace_back()  queue.emplace() 
 
-priorty_queue<pair<int,int>> q  
-在优先队列中使用pair默认先比较第一个元素在比较第二个元素  
-
 binaray search中  
 int middle = low + (high - low) / 2  可以防止溢出，功能等效于(low + high) / 2  
 此外使用>>右移运算符 >>1 功能等于 /2 不过注意优先级顺序，移位运算符优先级低于+ - x /等  
+
+n & 1 位运算判断奇偶
 
 char类型与int类型之间转换要看ASCII码  
 如'0' - '0' = 0  
@@ -67,6 +66,9 @@ BFS:使用queue实现
 例子lc 994, lc 102（利用level）
 ![image-20220730183644945](assets/image-20220730183644945.png)
 
+通过preorder和inorder构建树的时候要注意构建子树的顺序
+e.g. 在后序遍历的数组中整个数组是先存储左子树的节点，再存储右子树的节点，最后存储根节点，如果按每次选择「后序遍历的最后一个节点」为根节点，则先被构造出来的应该为右子树。
+lc 106
 **DFS vs BFS**
 
 ![image-20220819191626765](assets/image-20220819191626765.png)
@@ -135,3 +137,9 @@ Tips：
 - 如果是 DAG，那么它至少有一个拓扑序；
 - 反之，如果它存在一个拓扑序，那么这个图必定是 DGA.
 
+## Heap
+通过大小堆一起作用可以常数时间找到中位数median.
+priorty_queue<pair<int,int>> q  
+<greater<int>> 小根堆
+<less<int>> 大根堆
+在优先队列中使用pair默认先比较第一个元素在比较第二个元素  
