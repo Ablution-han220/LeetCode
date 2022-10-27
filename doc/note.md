@@ -138,8 +138,26 @@ Tips：
 - 反之，如果它存在一个拓扑序，那么这个图必定是 DGA.
 
 ## Heap
+
 通过大小堆一起作用可以常数时间找到中位数median.
+Defination: priority_queue<Type, Container, Functional>
 priorty_queue<pair<int,int>> q  
 <greater<int>> 小根堆
 <less<int>> 大根堆
+override: a < b 大根堆 a > b 小根堆
+自定义cmp模版：
+```c++
+    // 1. lambda expression
+    auto cmp = [&](ListNode* a, ListNode* b) {
+            return a->val > b->val;   
+        };
+    priority_queue<ListNode*, vector<ListNode*>, decltype(cmp)> qu(cmp);
+    // 2. struct
+    struct comp {
+        bool operator()(ListNode* a, ListNode* b) {
+            return a->val > b->val;
+        }
+    };
+    priority_queue<ListNode*, vector<ListNode*>, comp> q;
+```
 在优先队列中使用pair默认先比较第一个元素在比较第二个元素  
