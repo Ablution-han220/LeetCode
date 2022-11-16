@@ -15,12 +15,20 @@ char类型与int类型之间转换要看ASCII码
 如'0' - '0' = 0  
   '0' + 1 = '1'  
   'a' - 'a' = 0  
-例子：lc 67题   
+例子：lc 67题  
+```c++ 
 string a  
 for (int i = 0; i < a.size(); ++i)) {    
     int carry = a[i] - '0';  
 }  
 
+string s = "1238";   
+int n = 0;  
+for (int i = 0; i < s.size(); i++) {  
+    char c = s[i];  
+    n = 10 * n + (c - '0');  
+}  
+```
 std::string 在c++ 11后string字符串都是以'\0'结尾  
 
 
